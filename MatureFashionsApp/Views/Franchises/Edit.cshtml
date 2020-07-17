@@ -1,0 +1,65 @@
+﻿@model MatureFashionsApp.Models.DB.Franchise
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Franchise</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FranchiseNo" />
+            <div class="form-group">
+                <label asp-for="FranchiseName" class="control-label"></label>
+                <input asp-for="FranchiseName" class="form-control" />
+                <span asp-validation-for="FranchiseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FranchiseAddress" class="control-label"></label>
+                <input asp-for="FranchiseAddress" class="form-control" />
+                <span asp-validation-for="FranchiseAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FranchisePostcode" class="control-label"></label>
+                <input asp-for="FranchisePostcode" class="form-control" />
+                <span asp-validation-for="FranchisePostcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FranchiseTel" class="control-label"></label>
+                <input asp-for="FranchiseTel" class="form-control" />
+                <span asp-validation-for="FranchiseTel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FranchiseFax" class="control-label"></label>
+                <input asp-for="FranchiseFax" class="form-control" />
+                <span asp-validation-for="FranchiseFax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FranchiseStartdate" class="control-label"></label>
+                <input asp-for="FranchiseStartdate" class="form-control" />
+                <span asp-validation-for="FranchiseStartdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FranchisorNo" class="control-label"></label>
+                <select asp-for="FranchisorNo" class="form-control" asp-items="ViewBag.FranchisorNo"></select>
+                <span asp-validation-for="FranchisorNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

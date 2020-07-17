@@ -1,0 +1,64 @@
+﻿@model MatureFashionsApp.Models.DB.Item
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ItemNo" class="control-label"></label>
+                <input asp-for="ItemNo" class="form-control" />
+                <span asp-validation-for="ItemNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemDescription" class="control-label"></label>
+                <input asp-for="ItemDescription" class="form-control" />
+                <span asp-validation-for="ItemDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemGender" class="control-label"></label>
+                <input asp-for="ItemGender" class="form-control" />
+                <span asp-validation-for="ItemGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemColour" class="control-label"></label>
+                <input asp-for="ItemColour" class="form-control" />
+                <span asp-validation-for="ItemColour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemSize" class="control-label"></label>
+                <input asp-for="ItemSize" class="form-control" />
+                <span asp-validation-for="ItemSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemWholesalePrice" class="control-label"></label>
+                <input asp-for="ItemWholesalePrice" class="form-control" />
+                <span asp-validation-for="ItemWholesalePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemRetailPrice" class="control-label"></label>
+                <input asp-for="ItemRetailPrice" class="form-control" />
+                <span asp-validation-for="ItemRetailPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

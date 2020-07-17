@@ -1,0 +1,50 @@
+﻿@model MatureFashionsApp.Models.DB.Saleitem
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Saleitem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FranchiseNo" class="control-label"></label>
+                <select asp-for="FranchiseNo" class ="form-control" asp-items="ViewBag.FranchiseNo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeNo" class="control-label"></label>
+                <select asp-for="HomeNo" class ="form-control" asp-items="ViewBag.HomeNo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShowDate" class="control-label"></label>
+                <select asp-for="ShowDate" class ="form-control" asp-items="ViewBag.ShowDate"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemNo" class="control-label"></label>
+                <select asp-for="ItemNo" class ="form-control" asp-items="ViewBag.ItemNo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleQuantity" class="control-label"></label>
+                <input asp-for="SaleQuantity" class="form-control" />
+                <span asp-validation-for="SaleQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

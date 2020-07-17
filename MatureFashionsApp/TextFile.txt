@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=DESKTOP-M6282RS\SS2019;Database=MatureFashions;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models/DB

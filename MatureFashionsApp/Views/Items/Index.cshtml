@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MatureFashionsApp.Models.DB.Item>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemColour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemWholesalePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemRetailPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemColour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemWholesalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemRetailPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ItemNo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ItemNo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ItemNo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

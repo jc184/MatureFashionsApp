@@ -1,0 +1,61 @@
+﻿@model MatureFashionsApp.Models.DB.Franchise
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Franchise</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchiseName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchiseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchiseAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchiseAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchisePostcode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchisePostcode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchiseTel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchiseTel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchiseFax)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchiseFax)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchiseStartdate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchiseStartdate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FranchisorNoNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FranchisorNoNavigation.FranchisorNo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FranchiseNo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

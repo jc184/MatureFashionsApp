@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MatureFashionsApp.Models.DB.Franchise>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchiseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchiseAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchisePostcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchiseTel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchiseFax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchiseStartdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FranchisorNoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchiseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchiseAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchisePostcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchiseTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchiseFax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchiseStartdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FranchisorNoNavigation.FranchisorNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FranchiseNo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FranchiseNo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FranchiseNo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

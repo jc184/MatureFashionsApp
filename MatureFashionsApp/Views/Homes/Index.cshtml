@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MatureFashionsApp.Models.DB.Home>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomePostcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeTel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HometypeCodeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomePostcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HometypeCodeNavigation.HometypeCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HomeNo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HomeNo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HomeNo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
